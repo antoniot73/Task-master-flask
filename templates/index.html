@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Master IA{% endblock %}
+
+{% block body %}
+<section class="card">
+    <h1>Task Master IA</h1>
+    <p class="subtitle">Gestor de tareas con Flask, SQLite3 y SQLAlchemy</p>
+
+    {% if error %}
+        <div class="alert">{{ error }}</div>
+    {% endif %}
+
+    <form action="/" method="POST" class="task-form">
+        <input type="text" name="content" id="content" placeholder="Escribe una nueva tarea">
+        <select name="priority" id="priority">
+            <option value="Alta">Alta</option>
+            <option value="Media" selected>Media</option>
+            <option value="Baja">Baja</option>
+        </select>
+        <button type="submit">Agregar tarea</button>
+    </form>
+
+    {% if tasks|length < 1 %}
+        <div class="empty-state">
+            <h2>No hay tareas registradas</h2>
+            <p>Crea una tarea usando el formulario superior.</p>
+        </div>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Prioridad</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr class="{% if task.completed %}completed-row{% endif %}">
+                    <td>{{ task.content }}</td>
+                    <td>
+                        <span class="badge badge-{{ task.priority|lower }}">
+                            {{ task.priority }}
+                        </span>
+                    </td>
+                    <td>
+                        {% if task.completed %}
+                            Completada
+                        {% else %}
+                            Pendiente
+                        {% endif %}
+                    </td>
+                    <td>{{ task.date_created.date() }}</td>
+                    <td class="actions">
+                        <a href="/complete/{{ task.id }}">Cambiar estado</a>
+                        <a href="/update/{{ task.id }}">Actualizar</a>
+                        <a href="/delete/{{ task.id }}" class="danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</section>
+{% endblock %}

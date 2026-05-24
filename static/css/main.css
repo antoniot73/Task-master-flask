@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: #f9fafb;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+}
+
+.card {
+    width: min(1100px, 100%);
+    background: rgba(17, 24, 39, 0.94);
+    border: 1px solid #374151;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.card.narrow {
+    width: min(650px, 100%);
+}
+
+h1 {
+    margin: 0;
+    color: #38bdf8;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 28px;
+}
+
+.alert {
+    background: #7f1d1d;
+    border: 1px solid #ef4444;
+    color: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.task-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.task-form.vertical {
+    flex-direction: column;
+}
+
+input[type="text"],
+select {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: #082f49;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #334155;
+    text-align: left;
+}
+
+th {
+    background: #0f172a;
+    color: #93c5fd;
+}
+
+td {
+    background: #1e293b;
+}
+
+.completed-row td {
+    background: #0f2f26;
+    color: #bbf7d0;
+    text-decoration: line-through;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.badge-alta {
+    background: #dc2626;
+    color: white;
+}
+
+.badge-media {
+    background: #f59e0b;
+    color: #111827;
+}
+
+.badge-baja {
+    background: #22c55e;
+    color: #052e16;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a:hover {
+    color: #bae6fd;
+}
+
+a.danger {
+    color: #f87171;
+}
+
+.empty-state {
+    text-align: center;
+    color: #cbd5e1;
+    padding: 28px;
+    border: 1px dashed #475569;
+    border-radius: 14px;
+}
+
+.checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+    .task-form {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 0.88rem;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+}
