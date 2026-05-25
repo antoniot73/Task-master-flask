@@ -135,3 +135,11 @@ https://TU-APP.herokuapp.com/
 ## Nota
 
 La base de datos SQLite3 se genera automáticamente al ejecutar `app.py`. Se incluye `test.db` como evidencia local del proyecto.
+
+## 👨‍💻 Autor
+Antonio Nicolás Toro González 🎓 Maestría en Inteligencia Artificial para la Transformación Digital 🏫 Instituto Internacional de Aguascalientes
+
+## 👨‍🏫 Tutor Académico: Dr. Jonás Velasco Álvarez
+
+## 📜 Licencia Académica
+Material desarrollado con fines educativos y de formación avanzada en: Desarrollo e implementación de una aplicación web CRUD con Flask y SQLite3.
