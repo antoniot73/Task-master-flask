@@ -14,7 +14,7 @@ Este proyecto reproduce el ejercicio del video solicitado: una aplicación web C
 - CSS
 - Jinja2
 - Gunicorn
-- Heroku
+- Heroku (opción gratuita render.com)
 
 ## Personalización realizada
 
@@ -30,7 +30,7 @@ Además de reproducir el CRUD base del tutorial, se agregaron estos cambios pers
 ## Estructura del proyecto
 
 ```text
-flask_taskmaster_heroku/
+Task-Master/
 │
 ├── app.py
 ├── requirements.txt
@@ -131,7 +131,10 @@ Pegar aquí el enlace generado por Heroku:
 ```text
 https://TU-APP.herokuapp.com/
 ```
-
+```text
+render.com
+https://task-master-flask.onrender.com/
+```
 ## Nota
 
 La base de datos SQLite3 se genera automáticamente al ejecutar `app.py`. Se incluye `test.db` como evidencia local del proyecto.
